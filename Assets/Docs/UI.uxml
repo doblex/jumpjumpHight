@@ -1,0 +1,15 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Docs/main.uss?fileID=7433441132597879392&amp;guid=62f821e4dd143bd42a72d9e2874f7cdf&amp;type=3#main" />
+    <engine:VisualElement style="flex-grow: 1;" />
+    <engine:VisualElement style="flex-grow: 1; align-items: center;">
+        <engine:VisualElement style="flex-grow: 1; position: absolute; height: auto; justify-content: flex-start; align-items: stretch; top: auto; left: auto; width: auto; bottom: 370px;">
+            <engine:VisualElement name="Health" class="bar" style="flex-grow: 1; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgba(130, 129, 129, 0); overflow: hidden; align-self: auto; width: 200px; height: 40px; min-height: auto; max-height: none; align-items: flex-start;">
+                <engine:VisualElement name="HeartContainer" style="flex-grow: 1; width: 200px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; flex-direction: row; height: 40px; align-self: center; -unity-background-scale-mode: scale-to-fit; justify-content: space-evenly;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="CureBar" class="bar" style="flex-grow: 1; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgb(130, 129, 129); overflow: hidden; align-self: auto; width: 200px; height: 10px; min-height: auto; max-height: none; align-items: stretch;">
+                <engine:VisualElement name="CureBarValue" style="flex-grow: 1; background-color: rgb(255, 247, 0); width: 50%; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+    <engine:VisualElement name="CrystalContainer" style="flex-grow: 1; right: 0; position: absolute; height: auto; width: 100px; margin-top: 30px; margin-right: 30px; margin-bottom: 30px; margin-left: 30px; top: 0; bottom: 0; justify-content: space-evenly;" />
+</engine:UXML>

@@ -1,0 +1,10 @@
+.filled {
+}
+
+.empty {
+    -unity-background-image-tint-color: rgb(0, 0, 0);
+}
+
+.emptyCrystal {
+    -unity-background-image-tint-color: rgb(94, 92, 92);
+}

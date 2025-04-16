@@ -1,0 +1,4 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Docs/Template/hearthTemplate.uss?fileID=7433441132597879392&amp;guid=6641db12698c2f440940176fbc85852c&amp;type=3#hearthTemplate" />
+    <engine:VisualElement name="heart" class="filled" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/External/Assets/GP1_Assets2/Sprites/12-Live%20and%20Coins/Big%20Heart%20Idle%20(18x14).png?fileID=-3075179375282782876&amp;guid=a2e4af403eea8b347ad74315507eb281&amp;type=3#Big Heart Idle (18x14)_1&quot;); -unity-background-scale-mode: scale-to-fit; width: 40px; height: 40px;" />
+</engine:UXML>

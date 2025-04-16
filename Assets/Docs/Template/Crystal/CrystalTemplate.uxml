@@ -1,0 +1,4 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Docs/Template/heart/hearthTemplate.uss?fileID=7433441132597879392&amp;guid=6641db12698c2f440940176fbc85852c&amp;type=3#hearthTemplate" />
+    <engine:VisualElement name="Crystal" style="flex-grow: 1; width: 100px; height: 100px; background-image: url(&quot;project://database/Assets/External/Assets/GP1_Assets2/Sprites/12-Live%20and%20Coins/Big%20Diamond%20Idle%20(18x14).png?fileID=-4658123360840285283&amp;guid=2cbe124d61729c5498d6af0413dd5c9f&amp;type=3#Big Diamond Idle (18x14)_0&quot;);" />
+</engine:UXML>
