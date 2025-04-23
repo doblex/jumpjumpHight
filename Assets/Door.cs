@@ -62,6 +62,10 @@ public class Door : MonoBehaviour
 
     void TeleportPlayer(GameObject player)
     {
+        if (doorFunction == DoorFunction.exit)
+            return;
+
+
         if (doorType == DoorType.Open)
         {
             player.GetComponent<Player>().onPlayerAction -= TeleportPlayer;

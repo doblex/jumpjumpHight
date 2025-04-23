@@ -1,0 +1,25 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Docs/main.uss?fileID=7433441132597879392&amp;guid=62f821e4dd143bd42a72d9e2874f7cdf&amp;type=3#main" />
+    <engine:VisualElement style="flex-grow: 1; align-items: center;">
+        <engine:VisualElement style="flex-grow: 1; width: 500px; background-color: rgba(0, 0, 0, 0); align-items: center; flex-direction: row;">
+            <engine:VisualElement style="flex-grow: 1; justify-content: center; height: 500px; background-color: rgba(0, 0, 0, 0.62); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); align-items: center;">
+                <engine:VisualElement style="flex-grow: 1;" />
+                <engine:Label text="WinCondition" name="WinCondition" style="font-size: 50px; -unity-text-align: middle-center; color: rgb(255, 255, 255);" />
+                <engine:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: center; width: 300px;">
+                    <engine:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <engine:VisualElement style="flex-grow: 1;" />
+                        <engine:Label text="Crystals: " class="stats" />
+                        <engine:Label text="0/0" name="CrystalsObtained" class="stats scorePoints" />
+                    </engine:VisualElement>
+                    <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+                        <engine:VisualElement style="flex-grow: 1;" />
+                        <engine:Label text="Enemies: " class="stats" />
+                        <engine:Label text="0/0" name="EnemiesKilled" class="stats scorePoints" />
+                    </engine:VisualElement>
+                </engine:VisualElement>
+                <engine:Button text="Return To Menu" name="Return" class="menuButton" style="height: 60px; width: 320px;" />
+                <engine:VisualElement style="flex-grow: 1;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

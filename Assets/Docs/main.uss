@@ -4,3 +4,63 @@
     margin-bottom: 10px;
     margin-left: 10px;
 }
+
+.unity-button {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    background-color: rgb(64, 42, 37);
+    font-size: 25px;
+}
+
+.unity-text-element {
+    -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/External/Fonts/Chomsky.otf?fileID=12800000&guid=8091f515abcd1d347b14550d27c63742&type=3#Chomsky");
+}
+
+.menuButton {
+    color: rgb(255, 255, 255);
+    transition-property: scale;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.unity-button:hover {
+    transition-property: scale;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    scale: 1.1 1.1;
+}
+
+.stats {
+    font-size: 30px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.scorePoints {
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 80px;
+    height: 50px;
+}

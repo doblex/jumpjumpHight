@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class Player : Character
 {
     public delegate void OnPlayerAction(GameObject player);
+
     public event OnPlayerAction onPlayerAction;
 
 
@@ -126,7 +127,7 @@ public class Player : Character
     {
         animator.SetTrigger("trDeath");
 
-        //stop game
+        GameManager.Instance.WinCondition(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

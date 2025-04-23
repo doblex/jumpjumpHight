@@ -11,7 +11,7 @@ public class Fairy : MonoBehaviour
     [SerializeField] float cureAmount = 1f;
 
     [Header("followUp")]
-    [SerializeField] Vector3 distanceFromPlayer;
+    [SerializeField] Transform pointToFollow;
     [SerializeField] float speed = 2f;
 
     float timer = 0f;
@@ -31,15 +31,17 @@ public class Fairy : MonoBehaviour
     {
         if (player != null)
         {
-            Vector3 direction = (player.transform.position + player.transform.rotation * distanceFromPlayer) - transform.position;
+            Vector3 direction = pointToFollow.position - transform.position;
             float distance = direction.magnitude;
             if (distance > 0.5f)
             {
                 transform.position += speed * Time.deltaTime * direction.normalized;
             }
-            transform.rotation = player.transform.rotation;
-        }
 
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, direction.x > 0 ? 0 :  -180, transform.rotation.eulerAngles.z);
+            
+            
+        }
 
         if (timer <= 0)
         {

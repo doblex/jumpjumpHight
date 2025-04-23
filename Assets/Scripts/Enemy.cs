@@ -21,6 +21,8 @@ public class Enemy : Character
     Vector3 spawnpoint;
     Vector3 targetPosition;
 
+    public bool isDead() => currentState == AIState.dead;
+
     protected override void Awake()
     {
         base.Awake();
@@ -50,6 +52,7 @@ public class Enemy : Character
     public override void Die()
     {
         animator.SetTrigger("trDead");
+        currentState = AIState.dead;
         StartCoroutine(Disable(animator.GetCurrentAnimatorStateInfo(0).length));
     }
 
