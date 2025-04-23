@@ -64,6 +64,7 @@ public class Door : MonoBehaviour
     {
         if (doorType == DoorType.Open)
         {
+            player.GetComponent<Player>().onPlayerAction -= TeleportPlayer;
             player.transform.position = doors[0].transform.position;
             Debug.Log("Player teleported to door: " + doors[0].doorID);
         }

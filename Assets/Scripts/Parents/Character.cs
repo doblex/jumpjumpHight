@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -11,13 +13,23 @@ public abstract class Character : MonoBehaviour
     protected Animator animator;
     protected Rigidbody2D rb;
     protected SpriteRenderer spriteRenderer;
-
+    [Header("Stats")]
     [SerializeField] protected CharacterData characterData;
+
+    [Header("Attack")]
+    [SerializeField] protected Transform attackBoxOrigin;
+    [SerializeField] protected Vector2 attackBoxDimensions;
+    [SerializeField] protected LayerMask AttackLayer;
+
+
+    protected float attackRecoil;
 
     protected int health;
     protected float speed;
 
     protected bool isInvicible;
+
+    protected bool isFacingRight = true;
 
     protected virtual void Awake()
     {
@@ -27,6 +39,8 @@ public abstract class Character : MonoBehaviour
     private void Start()
     {
         onHealthChange?.Invoke(health, characterData.maxHealth);
+
+        attackRecoil = characterData.attackDuration;
     }
 
     private void Update()
@@ -34,6 +48,16 @@ public abstract class Character : MonoBehaviour
         Move();
         Action();
         Checks();
+
+        ResetAttack();
+    }
+
+    private void ResetAttack()
+    {
+        if (attackRecoil > 0)
+        {
+            attackRecoil -= Time.deltaTime;
+        }
     }
 
     private void Setup() 
@@ -56,6 +80,9 @@ public abstract class Character : MonoBehaviour
     {
         if (isInvicible)
             return;
+
+        isInvicible = true;
+        StartCoroutine(SetInvicible(false, characterData.immunityFrames));
         health -= damage;
 
         onHealthChange?.Invoke(health, characterData.maxHealth);
@@ -64,6 +91,13 @@ public abstract class Character : MonoBehaviour
         {
             Die();
         }
+    }
+
+    private IEnumerator SetInvicible(bool isBecomingInvincible, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        isInvicible = isBecomingInvincible;
     }
 
     public virtual void Heal(int amount)
@@ -75,6 +109,36 @@ public abstract class Character : MonoBehaviour
         onHealthChange?.Invoke(health, characterData.maxHealth);
     }
 
+    protected void Flip(float HorizontalInput)
+    {
+        if (isFacingRight && HorizontalInput < 0 || !isFacingRight && HorizontalInput > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
+    }
+
+    protected void Attack()
+    {
+        if (attackRecoil <= 0)
+        { 
+            attackRecoil = characterData.attackDuration;
+            animator.SetTrigger("trAttack");
+
+            Collider2D hitCollider = Physics2D.OverlapBox(attackBoxOrigin.position, attackBoxDimensions, 0f, AttackLayer);
+
+            if (hitCollider != null)
+            {
+               onAttackHit(hitCollider);
+            }
+
+        }
+    }
+
+
+    public abstract void onAttackHit(Collider2D hitCollider);
     public abstract void Die();
     public abstract void Move();
     public abstract void Action();

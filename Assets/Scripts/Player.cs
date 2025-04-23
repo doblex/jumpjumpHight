@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -7,14 +8,24 @@ public class Player : Character
     public delegate void OnPlayerAction(GameObject player);
     public event OnPlayerAction onPlayerAction;
 
-    [SerializeField] LayerMask platformLayer;
 
-    [SerializeField] KeyCode attack = KeyCode.E;
+    [Header("Jump")]
     [SerializeField] KeyCode jump = KeyCode.Space;
+    [SerializeField] LayerMask WallLayer;
+    [SerializeField] Transform groundCheck;
+
+    [Header("Attack")]
+    [SerializeField] KeyCode attack = KeyCode.E;
+
+    [Header("actions")]
     [SerializeField] KeyCode torch = KeyCode.Q;
+    Light2D torchLight;
+
     [SerializeField] KeyCode interact = KeyCode.W;
 
-    Light2D torchLight;
+    [Header("Crouch")]
+    [SerializeField] LayerMask platformLayer;
+
 
     bool isJumping = false;
     bool isFalling = false;
@@ -38,7 +49,7 @@ public class Player : Character
 
             animator.SetBool("IsMoving", true);
 
-            transform.rotation = Quaternion.Euler(0, movementDirection > 0 ? 0 : 180, 0);
+            Flip(movementDirection);
         }
         else
         {
@@ -62,16 +73,18 @@ public class Player : Character
 
         if (Input.GetKeyDown(attack))
         {
-            animator.SetTrigger("trAttack");
+            Attack();
         }
 
-        if (Input.GetKeyDown(jump) && !isJumping)
+        if (Input.GetKeyDown(jump) && IsGrounded())
         {    
                 isJumping = true;
                 animator.SetTrigger("trJump");
                 animator.SetBool("IsInAir", isJumping);
 
-                rb.AddForce(Vector2.up * characterData.jumpForce, ForceMode2D.Impulse);
+            //rb.AddForce(Vector2.up * characterData.jumpForce, ForceMode2D.Impulse);
+
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, characterData.jumpForce);
         }
 
         if (Input.GetAxis("Vertical") < 0 && !isJumping)
@@ -84,6 +97,11 @@ public class Player : Character
                 StartCoroutine(DisableCollision(hit.collider, 0.5f));
             }
         }
+    }
+
+    public override void onAttackHit(Collider2D hitCollider)
+    {
+        hitCollider.gameObject.GetComponent<Enemy>().DoDamage(characterData.damage);
     }
 
     public override void Checks()
@@ -130,6 +148,12 @@ public class Player : Character
             fall = true;
 
         return fall;
+    }
+
+    public bool IsGrounded() 
+    {
+        bool check = Physics2D.OverlapCircle(groundCheck.position, 0.2f, WallLayer);
+        return check; 
     }
 
     private IEnumerator DisableCollision(Collider2D collider, float disableTime)

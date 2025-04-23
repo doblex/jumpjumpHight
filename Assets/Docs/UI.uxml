@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Docs/main.uss?fileID=7433441132597879392&amp;guid=62f821e4dd143bd42a72d9e2874f7cdf&amp;type=3#main" />
     <engine:VisualElement style="flex-grow: 1;" />
     <engine:VisualElement style="flex-grow: 1; align-items: center;">
-        <engine:VisualElement style="flex-grow: 1; position: absolute; height: auto; justify-content: flex-start; align-items: stretch; top: auto; left: auto; width: auto; bottom: 370px;">
+        <engine:VisualElement style="flex-grow: 1; position: absolute; height: auto; justify-content: flex-start; align-items: stretch; top: auto; left: auto; width: auto; bottom: 50%;">
             <engine:VisualElement name="Health" class="bar" style="flex-grow: 1; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; background-color: rgba(130, 129, 129, 0); overflow: hidden; align-self: auto; width: 200px; height: 40px; min-height: auto; max-height: none; align-items: flex-start;">
                 <engine:VisualElement name="HeartContainer" style="flex-grow: 1; width: 200px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; flex-direction: row; height: 40px; align-self: center; -unity-background-scale-mode: scale-to-fit; justify-content: space-evenly;" />
             </engine:VisualElement>
