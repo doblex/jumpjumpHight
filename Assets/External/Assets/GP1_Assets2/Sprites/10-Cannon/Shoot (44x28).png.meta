@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,19 +131,19 @@ TextureImporter:
       name: Shoot (44x28)_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 2
-        width: 23
-        height: 21
+        x: 0
+        y: 0
+        width: 44
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65b050be81faee940800000000000000
+      spriteID: de730e4c46c5f00418fee8131a24550b
       internalID: 5327387930782927702
       vertices: []
       indices: 
@@ -153,19 +153,19 @@ TextureImporter:
       name: Shoot (44x28)_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 8
-        width: 15
-        height: 12
+        x: 44
+        y: 0
+        width: 44
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3bc046b647963afe0800000000000000
+      spriteID: c9a583eb14a36374e8a8bf096af9ea83
       internalID: -1178982728702096205
       vertices: []
       indices: 
@@ -175,19 +175,19 @@ TextureImporter:
       name: Shoot (44x28)_2
       rect:
         serializedVersion: 2
-        x: 56
-        y: 3
-        width: 33
-        height: 21
+        x: 88
+        y: 0
+        width: 44
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fcc360887811e7550800000000000000
+      spriteID: 9148a8c25deacf84da28a33997b968cc
       internalID: 6160380614089784527
       vertices: []
       indices: 
@@ -197,31 +197,9 @@ TextureImporter:
       name: Shoot (44x28)_3
       rect:
         serializedVersion: 2
-        x: 89
-        y: 8
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 306b684b8c046f1f0800000000000000
-      internalID: -1011549835531733501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shoot (44x28)_4
-      rect:
-        serializedVersion: 2
-        x: 94
+        x: 132
         y: 0
-        width: 47
+        width: 44
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,32 +207,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b3bef1a1fa2150b80800000000000000
-      internalID: -8429310584287139013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shoot (44x28)_5
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 2
-        width: 26
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1207f8ee0ddcaff0800000000000000
-      internalID: -23400841935912420
+      spriteID: 7092cef005065184ea32869af81da8bc
+      internalID: -1011549835531733501
       vertices: []
       indices: 
       edges: []
@@ -263,7 +219,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ff4b3c393036d4043bdfde1c554cc9d2
     internalID: 0
     vertices: []
     indices: 
@@ -272,7 +228,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shoot (44x28)_0: 5327387930782927702
+      Shoot (44x28)_1: -1178982728702096205
+      Shoot (44x28)_2: 6160380614089784527
+      Shoot (44x28)_3: -1011549835531733501
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

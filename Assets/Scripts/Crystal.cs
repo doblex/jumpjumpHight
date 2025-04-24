@@ -5,7 +5,20 @@ public class Crystal : MonoBehaviour
     int crystalIndex;
     bool isCollected = false;
 
+    Vector3 startPos;
+
     public bool IsCollected { get => isCollected; }
+
+    private void Start()
+    {
+        startPos = transform.position;
+    }
+
+    private void Update()
+    {
+        float y = Mathf.Sin(Time.time * 2f) * 0.2f;
+        transform.position = new Vector3(startPos.x, startPos.y + y, 0);
+    }
 
     public void SetCrystalIndex(int index) 
     {
