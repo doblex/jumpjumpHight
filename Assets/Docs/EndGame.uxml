@@ -7,13 +7,13 @@
                 <engine:Label text="WinCondition" name="WinCondition" style="font-size: 50px; -unity-text-align: middle-center; color: rgb(255, 255, 255);" />
                 <engine:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: center; width: 300px;">
                     <engine:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; align-items: center;">
-                        <engine:VisualElement style="flex-grow: 1;" />
                         <engine:Label text="Crystals: " class="stats" />
+                        <engine:VisualElement style="flex-grow: 1;" />
                         <engine:Label text="0/0" name="CrystalsObtained" class="stats scorePoints" />
                     </engine:VisualElement>
                     <engine:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
-                        <engine:VisualElement style="flex-grow: 1;" />
                         <engine:Label text="Enemies: " class="stats" />
+                        <engine:VisualElement style="flex-grow: 1;" />
                         <engine:Label text="0/0" name="EnemiesKilled" class="stats scorePoints" />
                     </engine:VisualElement>
                 </engine:VisualElement>

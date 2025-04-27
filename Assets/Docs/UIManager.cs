@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class UIManager : MonoBehaviour
 {
@@ -134,6 +136,8 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = isPausing ? 0 : 1;
 
+        Cursor.visible = isPausing;
+
         switch (status)
         {
             case 0:
@@ -155,5 +159,8 @@ public class UIManager : MonoBehaviour
     }
 
     void OnReturnToMenu_Clicked() 
-    { }
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
+    }
 }

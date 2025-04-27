@@ -1,0 +1,27 @@
+.menu {
+    width: 400px;
+}
+
+.screen {
+    align-content: center;
+    align-items: center;
+}
+
+.spacing {
+    height: 20%;
+}
+
+.unity-button {
+    height: 70px;
+    font-size: 30px;
+    -unity-font-style: bold;
+}
+
+.unity-button:hover {
+    transition-property: scale, background-color, color;
+    transition-duration: 0.2s, 0.2s, 0.2s;
+    scale: 1.1 1;
+    background-color: rgb(10, 19, 42);
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    color: rgb(255, 255, 255);
+}

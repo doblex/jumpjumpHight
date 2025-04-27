@@ -53,6 +53,7 @@ public class Enemy : Character
     {
         animator.SetTrigger("trDead");
         currentState = AIState.dead;
+        GameManager.Instance.AddDeadEnemy();
         StartCoroutine(Disable(animator.GetCurrentAnimatorStateInfo(0).length));
     }
 
@@ -126,6 +127,15 @@ public class Enemy : Character
     {
         targetPosition = playerObject.transform.position;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, characterData.speed * Time.deltaTime);
+
+        if (targetPosition.x > transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+        }
     }
 
     public override void Checks()

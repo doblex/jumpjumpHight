@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Enemy 1
   m_EditorClassIdentifier: 
   updatePosition: 2
-  idleDistance: 3
+  idleDistance: 10

@@ -1,0 +1,12 @@
+.screen {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.center {
+    align-items: center;
+    width: 500px;
+    align-self: center;
+    justify-content: center;
+}

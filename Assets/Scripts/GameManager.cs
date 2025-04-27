@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,14 +14,17 @@ public class GameManager : MonoBehaviour
     List<Crystal> crystals = new List<Crystal>();
     List<Enemy> enemies = new List<Enemy>();
 
+    int deadEnemies = 0;
+
     bool isPausing = false;
+    bool isGameEnded = false;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
         else
             Destroy(this);
@@ -30,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         CountCrystals();
         CountEnemies();
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -78,26 +83,19 @@ public class GameManager : MonoBehaviour
         return enemies.Count;
     }
 
-    public int GetDeadEnemies() 
-    {
-        int count = 0;
+    public void AddDeadEnemy() => deadEnemies++;
 
-        foreach (Enemy enemy in enemies) 
-        {
-            if(enemy.isDead()) count++;
-        }
-
-        return count;
-    }
+    public int GetDeadEnemies() => deadEnemies;
 
     public void WinCondition(bool win) 
     {
+        isGameEnded = true;
         onPause?.Invoke(true, win ? 1 : 2);
     }
 
     private void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isGameEnded)
         {
             isPausing = !isPausing;
             onPause?.Invoke(isPausing);
